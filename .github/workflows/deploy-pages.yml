@@ -1,5 +1,4 @@
-# Workflow A — Deploy repo root directly to GitHub Pages
-name: Deploy to GitHub Pages
+name: Build and deploy to GitHub Pages
 on:
   push:
     branches:
@@ -7,7 +6,7 @@ on:
   workflow_dispatch: {}
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -17,10 +16,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v1
+      - name: Use Node.js
+        uses: actions/setup-node@v4
         with:
-          path: ./
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
 
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
