@@ -1,4 +1,3 @@
-import React from 'react';
 import { portfolioData } from '../data/portfolioData';
 import { ArrowRight, BarChart2 } from 'lucide-react';
 

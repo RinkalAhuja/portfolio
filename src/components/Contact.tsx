@@ -1,6 +1,5 @@
-import React from 'react';
 import { portfolioData } from '../data/portfolioData';
-import { Mail, Phone, MapPin, Github } from 'lucide-react';
+import { Phone, MapPin, Github } from 'lucide-react';
 
 const Contact = () => {
   return (

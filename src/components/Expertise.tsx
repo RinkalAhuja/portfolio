@@ -1,4 +1,3 @@
-import React from 'react';
 import { portfolioData } from '../data/portfolioData';
 import { Search, TrendingUp, Share2 } from 'lucide-react';
 
