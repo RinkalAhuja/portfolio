@@ -3,13 +3,13 @@ import { ArrowRight, BarChart2 } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="pt-40 pb-20 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+    <section className="pt-36 pb-20 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
       <div className="flex-1 space-y-8">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/50 border border-slate-700 text-xs font-semibold tracking-widest text-cyan-400 uppercase">
           <BarChart2 size={14} />
           Digital Marketing • SEO • Performance
         </div>
-        <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
           Turning Search, Social & Paid Media Into <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Measurable Growth.</span>
         </h1>
         <p className="text-xl text-slate-400 max-w-2xl leading-relaxed">
@@ -26,6 +26,29 @@ const Hero = () => {
           >
             Let's Work Together
           </a>
+        </div>
+      </div>
+
+      <div className="relative shrink-0">
+        <div className="absolute -inset-1 bg-gradient-to-tr from-cyan-500/30 to-blue-500/30 rounded-3xl blur-xl pointer-events-none" />
+        <div className="relative w-72 sm:w-80 lg:w-96 rounded-2xl overflow-hidden border border-slate-700/80 bg-slate-900 shadow-2xl group">
+          <img
+            src="rinkal-ahuja.jpg"
+            alt={portfolioData.personal.name}
+            width={731}
+            height={1024}
+            loading="eager"
+            decoding="async"
+            className="w-full h-[380px] sm:h-[420px] object-cover object-top group-hover:scale-105 transition-transform duration-500"
+          />
+          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-transparent p-6 pt-16">
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-medium mb-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              Available for Growth Projects
+            </div>
+            <div className="text-lg font-bold text-white leading-snug">{portfolioData.personal.name}</div>
+            <div className="text-sm text-cyan-400 font-medium">{portfolioData.personal.title}</div>
+          </div>
         </div>
       </div>
     </section>
