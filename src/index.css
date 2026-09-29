@@ -4,10 +4,10 @@
 
 @layer base {
   h1, h2, h3, h4, h5, h6 {
-    @apply text-white tracking-tight;
+    @apply text-slate-900 tracking-tight;
   }
 }
 
 .glass-panel {
-  @apply bg-slate-900/50 backdrop-blur-md border border-slate-800;
+  @apply bg-white/85 backdrop-blur-md border border-slate-200/80 shadow-sm;
 }
