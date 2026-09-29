@@ -1,4 +1,4 @@
-import { portfolioData } from '../data/portfolioData';
+import { portfolioData, getMailtoUrl, handleEmailClick } from '../data/portfolioData';
 import { ArrowRight, BarChart2 } from 'lucide-react';
 
 const Hero = () => {
@@ -19,7 +19,11 @@ const Hero = () => {
           <a href="#work" className="inline-flex justify-center items-center gap-2 px-8 py-4 bg-cyan-500 text-slate-950 font-bold rounded-lg hover:bg-cyan-400 transition-all">
             View My Work <ArrowRight size={18} />
           </a>
-          <a href="#contact" className="inline-flex justify-center items-center px-8 py-4 bg-slate-800 text-white font-semibold rounded-lg border border-slate-700 hover:bg-slate-700 transition-all">
+          <a
+            href={getMailtoUrl()}
+            onClick={handleEmailClick}
+            className="inline-flex justify-center items-center px-8 py-4 bg-slate-800 text-white font-semibold rounded-lg border border-slate-700 hover:bg-slate-700 transition-all"
+          >
             Let's Work Together
           </a>
         </div>

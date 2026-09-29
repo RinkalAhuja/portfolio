@@ -8,7 +8,9 @@ export const portfolioData = {
     phone: "+91 9925040590",
     github: "https://github.com/RinkalAhuja/portfolio",
     location: "Ahmedabad, India",
-    email: "contact@rinkalahuja.com"
+    email: "rinkalahuja6@gmail.com",
+    emailSubject: "Inquiry: Digital Marketing & Growth Strategy Collaboration",
+    emailBody: "Hi Rinkal,\n\nI came across your portfolio and was impressed by your work in SEO, AEO/GEO, and performance marketing.\n\nI would love to connect and discuss a potential opportunity or growth challenge with you.\n\nHere are a few details:\n- Name / Company: \n- Website / Project: \n- Goals / How we can work together: \n\nLooking forward to hearing from you!\n\nBest regards,"
   },
   stats: [
     { label: "Peak Ad ROAS", value: "4,690%" },
@@ -105,3 +107,22 @@ export const portfolioData = {
     { category: "AI & Optimization", items: ["ChatGPT", "Claude", "Perplexity", "Google AI Overviews", "Schema.org"] }
   ]
 };
+
+export const getMailtoUrl = () => {
+  const { email, emailSubject, emailBody } = portfolioData.personal;
+  return `mailto:${email}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+};
+
+export const getGmailComposeUrl = () => {
+  const { email, emailSubject, emailBody } = portfolioData.personal;
+  return `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+};
+
+export const handleEmailClick = (e: { preventDefault: () => void }) => {
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  if (!isMobile) {
+    e.preventDefault();
+    window.open(getGmailComposeUrl(), '_blank', 'noopener,noreferrer');
+  }
+};
+

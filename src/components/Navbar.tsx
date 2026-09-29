@@ -1,4 +1,4 @@
-import { portfolioData } from '../data/portfolioData';
+import { portfolioData, getMailtoUrl, handleEmailClick } from '../data/portfolioData';
 
 const Navbar = () => {
   return (
@@ -14,7 +14,11 @@ const Navbar = () => {
           <a href="#work" className="hover:text-cyan-400 transition-colors">Work</a>
           <a href="#experience" className="hover:text-cyan-400 transition-colors">Experience</a>
         </div>
-        <a href="#contact" className="px-5 py-2.5 bg-white text-slate-950 font-semibold rounded-full hover:bg-cyan-400 hover:text-slate-950 transition-all">
+        <a
+          href={getMailtoUrl()}
+          onClick={handleEmailClick}
+          className="px-5 py-2.5 bg-white text-slate-950 font-semibold rounded-full hover:bg-cyan-400 hover:text-slate-950 transition-all"
+        >
           Let's Talk
         </a>
       </div>
